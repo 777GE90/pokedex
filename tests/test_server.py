@@ -9,7 +9,7 @@ class PokemonTests(unittest.TestCase):
         app.config["WTF_CSRF_ENABLED"] = False
         self.app = app.test_client()
 
-    def test_good_request(self):
+    def test_pokemon_get_good_request(self):
         """
         Assert an HTTP 200 response from the server and that the required
         params exist in the response
@@ -17,8 +17,8 @@ class PokemonTests(unittest.TestCase):
         response = self.app.get("/pokemon/mewtwo")
         self.assertEqual(response.status_code, 200)
 
-        pokemon_json = response.json()
+        pokemon_json = response.json
         self.assertIn("name", pokemon_json)
-        self.assertIn("is_legendary", pokemon_json)
+        self.assertIn("isLegendary", pokemon_json)
         self.assertIn("description", pokemon_json)
         self.assertIn("habitat", pokemon_json)

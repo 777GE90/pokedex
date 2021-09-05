@@ -1,3 +1,5 @@
+#!/bin/bash
+
 python3 -m venv temp_venv
 source temp_venv/bin/activate
 

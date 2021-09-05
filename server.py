@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_restful import Api, Resource
-from http import HTTPStatus
+
+from modules import pokeapi
 
 
 app = Flask(__name__)
@@ -9,7 +10,14 @@ api = Api(app)
 
 class Pokemon(Resource):
     def get(self, pokemon_name):
-        pass
+        """
+        Gets the details about a specific Pokemon
+        :param pokemon_name: String name of the Pokemon to get
+        :return: JSON response of Pokemon data
+        """
+        poke = pokeapi.PokeAPIWrapper()
+        result, status_code = poke.get_pokemon_species_by_name(pokemon_name)
+        return result, status_code
 
 
 api.add_resource(Pokemon, "/pokemon/<string:pokemon_name>")

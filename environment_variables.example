@@ -1,1 +1,2 @@
 export FLASK_DEBUG=1
+export POKEAPI_URL="https://pokeapi.co/api/v2"
