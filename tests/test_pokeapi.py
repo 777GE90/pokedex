@@ -152,8 +152,7 @@ class TestPokeAPIWrapper(unittest.TestCase):
         self.assertEqual(result["isLegendary"], True)
         self.assertEqual(
             result["description"],
-            mock_data.get_mewtwo_species["flavor_text_entries"][0][
-                "flavor_text"
-            ],
+            "It was created by a scientist after years of horrific gene "
+            "splicing and DNA engineering experiments.",
         )
         self.assertEqual(status, 200)

@@ -79,9 +79,12 @@ class PokeAPIWrapper:
             pokemon_species_data["name"] = result["name"]
             pokemon_species_data["habitat"] = result["habitat"]["name"]
             pokemon_species_data["isLegendary"] = result["is_legendary"]
-            pokemon_species_data["description"] = result[
-                "flavor_text_entries"
-            ][0]["flavor_text"]
+            pokemon_species_data["description"] = (
+                result["flavor_text_entries"][0]["flavor_text"]
+                .replace("\n", " ")
+                .replace("\r", " ")
+                .replace("\f", " ")
+            )
         except Exception:
             return {
                 "message": "Error: Failed to parse data"
