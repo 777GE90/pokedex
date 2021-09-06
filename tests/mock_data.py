@@ -17305,3 +17305,21 @@ get_mewtwo_species = {
         }
     ]
 }
+
+ft_code_429 = {
+    "error": {
+        "code": 429,
+        "message": "Too Many Requests: Rate limit of 5 requests per hour exceeded. Please wait for 59 minutes and 59 seconds."
+    }
+}
+
+ft_translate_hello_world = {
+    "success": {
+        "total": 1
+    },
+    "contents": {
+        "translated": "Valorous morrow to thee,  sir,  ordinary",
+        "text": "hello, world",
+        "translation": "shakespeare"
+    }
+}

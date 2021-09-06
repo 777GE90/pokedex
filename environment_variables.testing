@@ -1,1 +1,2 @@
 export POKEAPI_URL="https://pokeapi.co/api/v2"
+export FUNTRANSLATIONS_URL="https://api.funtranslations.com/translate"
