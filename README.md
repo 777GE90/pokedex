@@ -29,7 +29,11 @@ You can also run the unit tests by using `./runtests.sh`, this first runs a Flak
 
 ## How to run with Docker?
 
-Coming soon...
+Change into this project directory and build the Docker container:
+- `docker build -t faisal/pokedex .`
+
+Run the Docker container and expose port 5000, remember to include the required environment variables:
+- `docker run -p 5000:5000 --env POKEAPI_URL="https://pokeapi.co/api/v2" --env FUNTRANSLATIONS_URL="https://api.funtranslations.com/translate" faisal/pokedex`
 
 
 ## How would this be improved for a production release?
@@ -39,3 +43,4 @@ Coming soon...
 - Use the Python logging module to add logging throughout the API.
 - Would create a third parent abstract class called ApiWrapper that both the FunTranslationAPIWrapper and PokeAPIWrapper classes inherit from to remove duplication.
 - Would not be developing on main / master branch.
+- Add gunicorn log config file to ensure the logs are outputted to the container.
