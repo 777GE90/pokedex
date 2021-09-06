@@ -1,7 +1,7 @@
 from http import HTTPStatus
 import unittest
 
-from unittest.mock import patch, call
+from unittest.mock import patch
 from requests.exceptions import ConnectTimeout
 
 from tests import mock_data
